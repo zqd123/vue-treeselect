@@ -506,6 +506,21 @@
   padding: @treeselect-multi-value-padding-y @treeselect-multi-value-padding-x;
   vertical-align: middle;
 }
+/** 每一项后面的插槽 */
+.vue-treeselect__label-after {
+  display: inline-block;
+  padding: @treeselect-multi-value-margin-y @treeselect-multi-value-margin-x;
+  cursor: pointer;
+  background: @treeselect-multi-value-item-bg;
+  border: @treeselect-multi-value-item-border-width solid @treeselect-multi-value-item-border-color;
+  border-radius: @treeselect-border-radius-sm;
+  color: @treeselect-multi-value-font-color;
+  border-left: 1px solid @treeselect-multi-value-divider-color;
+  font-size: @treeselect-multi-value-font-size;
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
 .vue-treeselect__value-remove {
   color: @treeselect-multi-value-remove-color;

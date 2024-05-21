@@ -31,13 +31,17 @@
       }
       const customValueLabelRenderer = instance.$scopedSlots['value-label']
       const labelRenderer = customValueLabelRenderer ? customValueLabelRenderer({ node }) : node.label
+      //增加后置插槽（复制等功能）
+      const customLabelAfterRenderer = instance.$scopedSlots['label-after']
+      const labelAfterRenderer = customLabelAfterRenderer ? customLabelAfterRenderer({ node }) : ''
 
       return (
         <div class="vue-treeselect__multi-value-item-container">
           <div class={itemClass} onMousedown={this.handleMouseDown}>
             <span class="vue-treeselect__multi-value-label">{ labelRenderer }</span>
-            <span class="vue-treeselect__icon vue-treeselect__value-remove"><DeleteIcon /></span>
-          </div>
+            <span class="vue-treeselect__icon vue-treeselect__value-remove" ><DeleteIcon /></span>
+            </div>
+            <span class="vue-treeselect__icon vue-treeselect__label-after">{labelAfterRenderer}</span>
         </div>
       )
     },
